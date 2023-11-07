@@ -4,9 +4,7 @@ def warehouse_decorator(material):
             print('<strong>*</strong> Wrapping items from {} with {}'.format(our_function.__name__, material))
             our_function(*args)
             print()
-
         return internal_wrapper
-
     return wrapper
 
 
@@ -28,3 +26,4 @@ def pack_fruits(*args):
 pack_books('Alice in Wonderland', 'Winnie the Pooh')
 pack_toys('doll', 'car')
 pack_fruits('plum', 'pear')
+
