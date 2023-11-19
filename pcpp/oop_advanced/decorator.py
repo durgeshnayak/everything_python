@@ -13,4 +13,3 @@ def my_function(*args):
 
 
 my_function("Durgesh", "Snehal", "Chinmayee")
-
