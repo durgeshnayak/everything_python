@@ -1,32 +1,19 @@
-class WarehouseDecorator:
-    def __init__(self, material):
-        self.material = material
+class SimpleDecorator:
+    def __init__(self, function):
+        self.function = function
 
-    def __call__(self, our_function):
-        def wrapper(*args):
-            print(f"Wrapping items from {our_function.__name__} with {self.material}")
-            our_function(args)
-            print("Decorator function signing off")
-            print()
-
-        return wrapper
+    def __call__(self, *args, **kwargs):
+        print(f'{self.function.__name__} was called with following positional arguments: {args}')
+        print(f'{self.function.__name__} was called with following keyword arguments: {kwargs}')
+        print('Calling function now.........')
+        self.function(*args, **kwargs)
+        print('Decorator signing off........')
 
 
-@WarehouseDecorator('kraft')
-def pack_books(*args):
-    print("We'll pack books:", args)
+@SimpleDecorator
+def combiner(*args, **kwargs):
+    print(f'Hello from combiner function; received positional arguments: {args} & keyword arguments: {kwargs}')
 
 
-@WarehouseDecorator('foil')
-def pack_toys(*args):
-    print("We'll pack toys:", args)
+combiner('durgesh', 'agile coach', org="IBM", country="India")
 
-
-@WarehouseDecorator('cardboard')
-def pack_fruits(*args):
-    print("We'll pack fruits:", args)
-
-
-pack_books('Alice in Wonderland', 'Winnie the Pooh')
-pack_toys('doll', 'car')
-pack_fruits('plum', 'pear')
