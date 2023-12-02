@@ -18,6 +18,17 @@ tasks = [
 ]
 c.executemany('INSERT INTO tasks (name, priority) VALUES (?,?)', tasks)
 
+for row in c.execute('SELECT * FROM tasks'):
+    print(row)
+
+c.execute('SELECT * FROM tasks')
+rows = c.fetchall()
+for row in rows:
+    print(row)
+
+c.execute('SELECT * FROM tasks')
+row = c.fetchone()
+print(row)
 
 conn.commit()
 conn.close()

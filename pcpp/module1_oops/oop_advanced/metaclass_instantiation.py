@@ -2,7 +2,7 @@ import datetime
 
 
 def get_instantiation_time(self):
-    return self.instantiation_time
+    return self.__class__.instantiation_time
 
 
 class InstantiationMetaclass(type):
