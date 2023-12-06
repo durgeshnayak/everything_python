@@ -13,5 +13,3 @@ with open('exported_contacts.csv', 'w', newline='') as csvfile:
     writer.writerow(['wife', '222-555-103'])
     writer.writerow(['sister', '222-555-104'])
 
-
-

@@ -28,6 +28,7 @@ for row in rows:
 
 c.execute('SELECT * FROM tasks')
 row = c.fetchone()
+
 print(row)
 
 conn.commit()

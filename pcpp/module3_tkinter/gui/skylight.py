@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 
 
-def click():
+def click(event=None):
     reply = messagebox.askquestion("Quit?", "Are you sure?")
     if reply == "yes":
         skylight.destroy()
