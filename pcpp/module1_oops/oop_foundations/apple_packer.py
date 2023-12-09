@@ -14,6 +14,7 @@ class Packer:
         self.weight = 0
         self.pack = True
 
+
     def add_apple(self, new_apple: Apple):
         if self.check_weight(new_apple):
             self.apple_count += 1
