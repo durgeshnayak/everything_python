@@ -15,7 +15,8 @@ def encode_car(car):
 
 
 def decode_car(flat_car):
-    return Car(flat_car['make'], flat_car['model'])
+    # return Car(flat_car['make'], flat_car['model'])
+    return Car(**flat_car)
 
 
 class CarEncoder(json.JSONEncoder):
